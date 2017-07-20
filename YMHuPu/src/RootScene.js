@@ -1,29 +1,25 @@
 /**
- * Copyright (c) 2017-present, Liu Jinyong
+ * Copyright (c) 2017-present,chen1230
  * All rights reserved.
- *
- * https://github.com/huanxsd/MeiTuan  
  * @flow
  */
 
 //import liraries
 import React, { PureComponent } from 'react'
-import { StatusBar } from 'react-native'
+import { StatusBar,View,Text,Image } from 'react-native'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 
 import color from './widget/color'
 import { screen, system, tool } from './common'
 import TabBarItem from './widget/TabBarItem'
 
-import HomeScene from './scene/Home/HomeScene'
-import OrderScene from './scene/Order/OrderScene'
-import NearbyScene from './scene/Nearby/NearbyScene'
-import MineScene from './scene/Mine/MineScene'
-import MineView from './scene/Mine/MineView'
-import WebScene from './widget/WebScene'
-import GroupPurchaseScene from './scene/GroupPurchase/GroupPurchaseScene'
-import HomeCityView from './scene/Home/HomeCity'
-const lightContentScenes = ['Home', 'Mine']
+import HPcommunity from './pages/Community/HPcommunity'
+import HPequipment from './pages/Equipment/HPequipment'
+import HPmore from './pages/More/HPmore'
+import HPnews from './pages/News/HPnews'
+import HPmatchs from './pages/Matchs/HPmatchs'
+
+const lightContentScenes = ['HPnews', 'HPmore']
 
 function getCurrentRouteName(navigationState) {
     if (!navigationState) {
@@ -47,7 +43,7 @@ class RootScene extends PureComponent {
 
     render() {
         return (
-            <Navigator
+             <Navigator
                 onNavigationStateChange={
                     (prevState, currentState) => {
                         const currentScene = getCurrentRouteName(currentState);
@@ -63,65 +59,78 @@ class RootScene extends PureComponent {
                 }
             />
         );
-    }
-}
-
+    };
+};
 const Tab = TabNavigator(
     {
-        Home: {
-            screen: HomeScene,
+        News: {
+            screen: HPnews,
             navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '团购',
+                tabBarLabel: '新闻',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_homepage@2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_homepage_selected@2x.png')}
+                        normalImage={require('./imgs/nav/news_btn_night@2x.png')}
+                        selectedImage={require('./imgs/nav/news_btn_1@2x.png')}
                     />
                 )
             }),
         },
-        Nearby: {
-            screen: NearbyScene,
+        Matchs: {
+            screen: HPmatchs,
             navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '附近',
+                tabBarLabel: '比赛',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_merchant@2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_merchant_selected@2x.png')}
-                    />
-                )
-            }),
-        },
-
-        Order: {
-            screen: OrderScene,
-            navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '订单',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <TabBarItem
-                        tintColor={tintColor}
-                        focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_order@2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_order_selected@2x.png')}
+                        normalImage={require('./imgs/nav/games_btn_night@2x.png')}
+                        selectedImage={require('./imgs/nav/games_btn_1@2x.png')}
                     />
                 )
             }),
         },
 
-        Mine: {
-            screen: MineScene,
+        Community: {
+            screen: HPcommunity,
             navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '我的',
+                tabBarLabel: '社区',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <TabBarItem
                         tintColor={tintColor}
                         focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_mine@2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_mine_selected@2x.png')}
+                        normalImage={require('./imgs/nav/bbs_btn_night@2x.png')}
+                        selectedImage={require('./imgs/nav/bbs_btn_1@2x.png')}
+                    />
+                )
+            }),
+        },
+
+        Equipment: {
+            screen: HPequipment,
+            navigationOptions: ({ navigation }) => ({
+                tabBarLabel: '  ',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <TabBarItem
+                        tintColor={tintColor}
+                        focused={focused}
+                        normalImage={require('./imgs/nav/shoes_btn_night@2x.png')}
+                        selectedImage={require('./imgs/nav/shoes_btn_1@2x.png')}
+                    />
+                )
+            }),
+        },
+        More: {
+            screen: HPmore,
+            navigationOptions: ({ navigation }) => ({
+                tabBarLabel: '更多',
+                tabBarIcon: ({ focused, tintColor }) => (
+                    <TabBarItem
+                        tintColor={tintColor}
+                        focused={focused}
+                        normalImage={require('./imgs/nav/more_btn_night@2x.png')}
+                        selectedImage={require('./imgs/nav/more_btn_1@2x.png')}
                     />
                 )
             }),
@@ -135,8 +144,9 @@ const Tab = TabNavigator(
         lazy: true,
         tabBarOptions: {
             activeTintColor: color.theme,
-            inactiveTintColor: '#979797',
+            inactiveTintColor: '#979797',//活跃文字，可以渲染icon颜色
             style: { backgroundColor: '#ffffff'},
+            showLabel:false,
         },
     }
 
@@ -144,15 +154,7 @@ const Tab = TabNavigator(
 
 const Navigator = StackNavigator(
     {
-        Tab: { screen: Tab },
-        Web: { screen: WebScene },
-        GroupPurchase: { screen: GroupPurchaseScene },
-        MineD: {screen: MineView},
-        City:{screen:HomeCityView,
-             navigationOptions:{
-                 mode:'modal',
-             }
-    },
+        Tab: { screen: Tab }
     },
     {
         navigationOptions: {
