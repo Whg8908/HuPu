@@ -13,6 +13,8 @@ import color from './widget/color'
 import { screen, system, tool } from './common'
 import TabBarItem from './widget/TabBarItem'
 
+import Splash from './pages/Splash/Splash';
+
 import HPcommunity from './pages/Community/HPcommunity'
 import HPequipment from './pages/Equipment/HPequipment'
 import HPmore from './pages/More/HPmore'
@@ -154,7 +156,8 @@ const Tab = TabNavigator(
 
 const Navigator = StackNavigator(
     {
-        Tab: { screen: Tab }
+	    Splash: { screen: Splash },
+	    Tab: { screen: Tab }
     },
     {
         navigationOptions: {
