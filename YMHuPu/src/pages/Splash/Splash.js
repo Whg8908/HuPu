@@ -45,6 +45,7 @@ class Splash extends React.Component {
 		clearTimeout(this.timer);
 	}
 
+
 	render() {
 		return (
 			<Animated.Image
