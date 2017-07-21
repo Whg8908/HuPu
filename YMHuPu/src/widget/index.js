@@ -19,12 +19,12 @@ export let Button = ButtonInner
  * @flow
  */
 
-import DetailCell from './DetailCell'
+// import DetailCell from './DetailCell'
 import NavigationItem from './NavigationItem'
 import PageControl from './PageControl'
 import RefreshListView from './RefreshListView'
 import RefreshState from './RefreshState'
-import SearchBar from './SearchBar'
+// import SearchBar from './SearchBar'
 import Separator from './Separator'
 import SpacingView from './SpacingView'
 import TabBarItem from './TabBarItem'

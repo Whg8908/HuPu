@@ -7,7 +7,7 @@
 //import liraries
 import React, { PureComponent } from 'react'
 import { StatusBar,View,Text,Image } from 'react-native'
-import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+import { StackNavigator, TabNavigator, TabBarBottom,Platform} from 'react-navigation';
 
 import color from './widget/color'
 import { screen, system, tool } from './common'
@@ -112,7 +112,7 @@ const Tab = TabNavigator(
         Equipment: {
             screen: HPequipment,
             navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '  ',
+                tabBarLabel: '装备',
                 tabBarIcon: ({ focused, tintColor }) => (
                     <TabBarItem
                         tintColor={tintColor}
@@ -161,10 +161,13 @@ const Navigator = StackNavigator(
     },
     {
         navigationOptions: {
-            // headerStyle: { backgroundColor: color.theme }
+            headerTitleStyle:{color:'#ffffff',alignSelf:'center'},
+            headerTitle:'虎扑体育',
+            headerStyle: { backgroundColor: color.theme,height:system.isIOS?64:40},
             headerBackTitle: null,
             headerTintColor: '#333333',
             showIcon: true,
+            mode:'card',
         },
     }
 );
