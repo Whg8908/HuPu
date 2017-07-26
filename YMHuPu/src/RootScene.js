@@ -20,6 +20,8 @@ import HPequipment from './pages/Equipment/HPequipment'
 import HPmore from './pages/More/HPmore'
 import HPnews from './pages/News/HPnews'
 import HPmatchs from './pages/Matchs/HPmatchs'
+import HPnewsDetail from './pages/News/HPnwesDetail'
+
 
 const lightContentScenes = ['HPnews', 'HPmore']
 
@@ -157,12 +159,13 @@ const Tab = TabNavigator(
 const Navigator = StackNavigator(
     {
 	    Splash: { screen: Splash },
-	    Tab: { screen: Tab }
+        Tab: { screen: Tab },
+        HPnewsDetail:{ screen:HPnewsDetail }    
     },
     {
         navigationOptions: {
             headerTitleStyle:{color:'#ffffff',alignSelf:'center'},
-            headerTitle:'虎扑体育',
+            title:'虎扑体育',
             headerStyle: { backgroundColor: color.theme,height:system.isIOS?64:40},
             headerBackTitle: null,
             headerTintColor: '#333333',

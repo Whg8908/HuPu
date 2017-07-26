@@ -6,8 +6,9 @@
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 
-#import "RCTEventEmitter.h"
+#import <React/RCTEventEmitter.h>
 
-@interface NativeToReact_native : RCTEventEmitter
+@interface NativeToReact_native : RCTEventEmitter<RCTBridgeModule>
 
++ (void)sendeHeigthToReactNative:(NSString *)h;
 @end

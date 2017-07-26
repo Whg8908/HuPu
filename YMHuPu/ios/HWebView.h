@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HWebView : UIWebView
+#import <React/RCTWebView.h>
+@interface HWebView : RCTWebView
 
 @end

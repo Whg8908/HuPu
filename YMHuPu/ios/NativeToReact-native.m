@@ -10,4 +10,22 @@
 
 @implementation NativeToReact_native
 
+
+- (NSArray<NSString *> *)supportedEvents{
+  
+  return @[@"sendeHeigthToReactNative"];
+  
+}
+
+
++ (void)sendeHeigthToReactNative:(NSString *)h{
+  
+  NativeToReact_native *a = [NativeToReact_native new];
+  [a sendEventWithName:@"sendeIosApp" body:@{
+                                             @"height":h
+                                             
+                                             }];
+
+}
+
 @end

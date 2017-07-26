@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface MangerRN : NSObject
+#import <React/RCTBridgeModule.h>
+@interface MangerRN : NSObject<RCTBridgeModule>
 
 @end

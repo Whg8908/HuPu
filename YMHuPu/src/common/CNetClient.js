@@ -51,6 +51,7 @@ export default class CNetClient extends Component{
         }).catch(error => {
             // ToastAndroid.show("netword error",ToastAndroid.SHORT);
             alert("netword error:"+error);
+            console.log(error);
         });
     };
 

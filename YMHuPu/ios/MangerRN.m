@@ -10,4 +10,13 @@
 
 @implementation MangerRN
 
+RCT_EXPORT_MODULE(MangerRNtoNative)
+
+RCT_EXPORT_METHOD(putHtmlString:(NSString *)string){
+
+
+
+}
+
+
 @end
