@@ -17,7 +17,7 @@ import screen from '../../common/screen';
 
 const maxHeight = screen.height;
 const maxWidth = screen.width;
-const splashImg = require('../../imgs/splash.png');
+const splashImg = require('../../imgs/start/LaunchImage-800-667h@2x.png');
 
 class Splash extends React.Component {
 	static navigationOptions = {
@@ -33,7 +33,7 @@ class Splash extends React.Component {
 
 	componentDidMount() {
 		Animated.timing(this.state.bounceValue, {
-			toValue: 1.2,
+			toValue: 1.1,
 			duration: 1000
 		}).start();
 		this.timer = setTimeout(() => {
