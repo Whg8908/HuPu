@@ -12,7 +12,7 @@
 
 react-native-signature  中加入了横屏组件`react-native-orientation`,在签名的过程中会自动横屏，签名完毕可以变成竖屏。
 
-2.导入
+2.导入文件
 ```
 import { StackNavigator, TabNavigator } from "react-navigation";
 import SignatureView from "react-native-signature";
@@ -37,3 +37,5 @@ nav.navigate("SignatureView", {
 2.`npm install`
 
 3.`react-native link react-native-orientation`
+
+有任何问题欢迎指正，觉得对自己有帮助可以给星支持😁
