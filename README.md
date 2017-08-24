@@ -17,7 +17,7 @@ react-native-signature  中加入了横屏组件`react-native-orientation`,在�
 import { StackNavigator, TabNavigator } from "react-navigation";
 import SignatureView from "react-native-signature";
 ```
-3.使用代码,点击“开始签名按钮”使用navigate跳转页面。 callback回调保存的图片，然后显示在当前页面使用
+3.使用代码,点击“开始签名按钮”使用"react-navigation"跳转页面。 callback回调保存的图片，然后显示在当前页面使用
 
 ```
 nav.navigate("SignatureView", {
